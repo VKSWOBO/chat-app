@@ -32,11 +32,11 @@ const center = {
 
 function SimpleMap(props) {
   const {isLoaded, loadError} = useLoadScript({
-    googleMapsApiKey: "AIzaSyAkoe98NAkKlGghynXBqFjVdMrYK4RDoOI",
+    googleMapsApiKey: process.env.API_KEY,
     libraries,
   });
 
-  Geocode.setApiKey("AIzaSyAkoe98NAkKlGghynXBqFjVdMrYK4RDoOI");
+  Geocode.setApiKey(process.env.API_KEY);
 
   const [mainAddress, setMainAddress] = React.useState("")
   const [marker,setMarker] = React.useState("")

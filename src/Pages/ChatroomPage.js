@@ -98,7 +98,7 @@ const ChatroomPage = ({ match }) => {
   }
 
   const dataCollect = async ()=>{
-    await axios.get(`https://maps.googleapis.com/maps/api/distancematrix/json?origins=${startLocationCoord.lat},${startLocationCoord.lng}&destinations=${endLocationCoord.lat},${endLocationCoord.lng}&key=${"AIzaSyAkoe98NAkKlGghynXBqFjVdMrYK4RDoOI"}`, {
+    await axios.get(`https://maps.googleapis.com/maps/api/distancematrix/json?origins=${startLocationCoord.lat},${startLocationCoord.lng}&destinations=${endLocationCoord.lat},${endLocationCoord.lng}&key=${process.env.API_KEY}`, {
       headers: {"Access-Control-Allow-Origin": "*",'Access-Control-Allow-Methods': 'POST, GET, OPTIONS'},
     responseType: 'json',
      }).then(response => {
